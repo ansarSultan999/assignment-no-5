@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #fff;
+}
+@font-face {
+    font-family: montserrat;
+    src: url(assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    perspective: 800;
+}
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 350px;
+    width: 350px;
+    background-color: #97c70742;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 5;
+  
+}
+.nav{
+    height: 140px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 0 150px;
+    position: fixed;
+    z-index: 99;
+}
+.nav img{
+    height: 75px;
+}
+.nav h4{
+    text-transform: uppercase;
+    font-weight: 500px;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+
+
+}
+#page1 h1{
+    font-size: 90px;
+    font-weight: 700;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 1px #95C11E ;
+    z-index: -1;
+
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    z-index: 10;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+    display:inline-block;
+    font-size: 100px;
+    font-weight: 600;
+    margin-right: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: transparent;
+    -webkit-text-stroke:2px #95C11E;
+    transition: all linear 0.5s;
+}
+#scroller h4:hover{
+    color: #95C11E;
+}
+@keyframes scroll { 
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+#about-us{
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    justify-content: space-around;
+    height: 40vh;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    /* background-color: red; */
+}
+#about-us img{
+    height: 220px;
+    width: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-us-in{
+    text-align: center;
+    width: 50%;
+}
+#about-us-in h3{
+    font-size: 35px;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+#about-us-in p{
+    font-size: 20px;
+    line-height: 30px;
+}
+#cards-container{
+    /* background-color: red; */
+    height: 70vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+.card{
+    height: 80%;
+    width: 22%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    z-index: 12;
+    transition: all 0.3s ease-in-out ;
+    overflow: hidden;
+}
+#card-1{
+    background-image:url(assets/images/img-3.avif) ;
+}
+#card-2{
+    background-image: url(assets/images/img-4.webp);
+}
+#card-3{
+    background-image: url(assets/images/img-5.avif);
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding: 20px;
+    padding-top: 50px;
+    opacity: 0;    
+   
+}
+.overlay h4{
+    color: #000;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+.overlay p{
+    color: #000;
+    font-size: 20px;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+#green-div{
+    height: 30vh;
+    display: flex;
+   
+    justify-content: space-between;
+}
